@@ -19,4 +19,9 @@ async def hello(ctx):
 async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
 
+@bot.group()
+async def cool(ctx):
+
+    if ctx.invoked_subcommand is None:
+        await ctx.send(f'No, {ctx.subcommand_passed} is not cool')
 bot.run(TOKEN)
